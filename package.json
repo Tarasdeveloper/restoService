@@ -3,6 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "json-server": "^1.0.0-beta.3",
         "prop-types": "^15.7.2",
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
@@ -13,6 +14,7 @@
     },
     "scripts": {
         "start": "react-scripts start",
+        "data": "npx json-server src/db.json",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"

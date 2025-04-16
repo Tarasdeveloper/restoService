@@ -3,10 +3,9 @@ import { MainPage, CartPage } from '../pages';
 import AppHeader from '../app-header';
 
 import Background from './food-bg.jpg';
-import WithRestoService from '../hoc/with-resto-service';
+import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
 
-const App = ({ RestoService }) => {
-    console.log(RestoService.getMenuItems());
+const App = () => {
     return (
         <div
             style={{
@@ -15,10 +14,12 @@ const App = ({ RestoService }) => {
             className="app"
         >
             <AppHeader total={50} />
-            <MainPage />
-            <CartPage />
+            <Switch>
+                <Route exact path="/" component={MainPage} />
+                <Route path="/cart" component={CartPage} />
+            </Switch>
         </div>
     );
 };
 
-export default WithRestoService()(App);
+export default App;
