@@ -2,6 +2,7 @@
     "name": "resto",
     "version": "0.1.0",
     "private": true,
+    "homepage": "https://tarasdeveloper.github.io/restoService/",
     "dependencies": {
         "json-server": "^1.0.0-beta.3",
         "prop-types": "^15.7.2",
