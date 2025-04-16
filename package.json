@@ -17,6 +17,7 @@
         "data": "npx json-server src/db.json",
         "build": "react-scripts build",
         "test": "react-scripts test",
+        "lint:js": "eslint src/**/*.{js,jsx}",
         "eject": "react-scripts eject"
     },
     "eslintConfig": {
