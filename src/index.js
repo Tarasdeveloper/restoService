@@ -13,15 +13,17 @@ import { BrowserRouter } from 'react-router-dom/cjs/react-router-dom.min';
 const restoService = new RestoService();
 
 ReactDOM.render(
-    <Provider store={store}>
-        <ErrorBoundry>
-            <RestoSerficeContext.Provider value={restoService}>
-                <BrowserRouter basename="/restoService">
-                    {/* <BrowserRouter> */}
-                    <App />
-                </BrowserRouter>
-            </RestoSerficeContext.Provider>
-        </ErrorBoundry>
-    </Provider>,
+    <React.StrictMode>
+        <Provider store={store}>
+            <ErrorBoundry>
+                <RestoSerficeContext.Provider value={restoService}>
+                    {/* <BrowserRouter basename="/restoService"> */}
+                    <BrowserRouter>
+                        <App />
+                    </BrowserRouter>
+                </RestoSerficeContext.Provider>
+            </ErrorBoundry>
+        </Provider>
+    </React.StrictMode>,
     document.getElementById('root')
 );
