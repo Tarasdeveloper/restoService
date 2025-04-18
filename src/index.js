@@ -17,8 +17,8 @@ ReactDOM.render(
         <Provider store={store}>
             <ErrorBoundry>
                 <RestoSerficeContext.Provider value={restoService}>
-                    {/* <BrowserRouter basename="/restoService"> */}
-                    <BrowserRouter>
+                    <BrowserRouter basename="/restoService">
+                        {/* <BrowserRouter> */}
                         <App />
                     </BrowserRouter>
                 </RestoSerficeContext.Provider>
