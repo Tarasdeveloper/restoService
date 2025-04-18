@@ -4,12 +4,20 @@ import { connect } from 'react-redux';
 import { deleteFromCart } from '../../actions';
 
 const CartTable = ({ items, deleteFromCart }) => {
+    if (items.length === 0) {
+        return (
+            <div className="cart__empty">
+                Корзина пуста. Пожалуйста, выберите товары в меню.
+            </div>
+        );
+    }
+
     return (
         <>
             <div className="cart__title">Ваш заказ:</div>
             <div className="cart__list">
                 {items.map((item) => {
-                    const { title, price, url, id } = item;
+                    const { title, price, url, id, amount } = item;
                     return (
                         <div key={id} className="cart__item">
                             <img
@@ -24,6 +32,12 @@ const CartTable = ({ items, deleteFromCart }) => {
                                 onClick={() => deleteFromCart(id)}
                             >
                                 &times;
+                            </div>
+
+                            <div className="cart__item-amount">{amount}</div>
+
+                            <div className="cart__item-total">
+                                {amount * price}$
                             </div>
                         </div>
                     );

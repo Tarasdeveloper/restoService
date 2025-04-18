@@ -10,3 +10,8 @@ body {
 ul {
     list-style-type: none;
 }
+
+.app {
+    padding-right: 15px;
+    padding-left: 15px;
+}

@@ -4,8 +4,9 @@ import AppHeader from '../app-header';
 
 import Background from './food-bg.jpg';
 import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
+import { connect } from 'react-redux';
 
-const App = () => {
+const App = ({ total }) => {
     return (
         <div
             style={{
@@ -13,7 +14,7 @@ const App = () => {
             }}
             className="app"
         >
-            <AppHeader total={150} />
+            <AppHeader total={total} />
             <Switch>
                 <Route exact path="/" component={MainPage} />
                 <Route path="/cart" component={CartPage} />
@@ -22,4 +23,12 @@ const App = () => {
     );
 };
 
-export default App;
+const mapStateToProps = ({ items }) => {
+    const total = items.reduce((sum, item) => {
+        return sum + item.price * item.amount;
+    }, 0);
+
+    return { total };
+};
+
+export default connect(mapStateToProps)(App);

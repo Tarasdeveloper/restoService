@@ -38,4 +38,14 @@
     color: #fff;
     font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+.menu__btn:hover {
+    background-color: #1d7931;
+}
+.menu__btn:focus {
+    background-color: #6e9275;
+}
+.menu__btn:active {
+    background-color: #1d8131;
 }
