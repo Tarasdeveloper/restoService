@@ -1,6 +1,6 @@
 .menu__list {
     min-height: 100vh;
-    padding: 50px;
+    padding: 110px 50px 50px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
